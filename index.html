@@ -54,12 +54,38 @@
     <div class="section hero nerf-_v2">
         <div class="container-2 nerf_header_v2 w-container">
             <h1 class="nerf_title_v2">Diffusion 3D Features (Diff3F)</h1>
-            <h3 class="grey-heading_nerf"> Decorating Untextured Shapes with Distilled Semantic Features</h3>
+            <div class="nerf_subheader_v2">Decorating Untextured Shapes with Distilled Semantic Features</div>
         </div>
+            <div class="nerf_subheader_v2">
+                <div>
+                    <a href="https://niladridutt.com/" target="_blank" class="nerf_authors_v2">Niladri Shekhar Dutt<span
+                            class="text-span_nerf"></span></a><sup> 1</sup>,&nbsp;&nbsp;
+                    <a href="https://sanjeevmk.github.io/" target="_blank" class="nerf_authors_v2">Sanjeev Muralikrishnan<span
+                            class="text-span_nerf"></span></a><sup> 1</sup>,&nbsp;&nbsp;
+                    <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank" class="nerf_authors_v2">Niloy J. Mitra<span
+                            class="text-span_nerf"></span></a><sup> 1, 2</sup>
+                </div>
+                <div>
+                    <h1 class="nerf_affiliation_v2"><sup>1</sup> University College London</h1>,
+                    <h1 class="nerf_affiliation_v2"><sup>2</sup> Adobe Research</h1>
+                </div>
+
+                <div class="external-link">
+                    <a class="btn" href="https://arxiv.org/abs/2310.16818" role="button" target="_blank">
+                        <i class="ai ai-arxiv"></i> Arxiv </a>
+                    <a class="btn" href="paper/Paper_high_res.pdf" role="button" target="_blank">
+                        <i class="fa fa-file-pdf"></i> Paper </a>
+                    <a class="btn" href="https://github.com/deepseek-ai/DreamCraft3D" role="button" target="_blank" disabled>
+                        <i class="fa-brands fa-github"></i> Coming soon </a>
+                    <!-- <a class="btn btn-large btn-light" href="https://youtu.be/0FazXENkQms" role="button" target="_blank" disabled>
+                        <i class="fa-brands fa-youtube"></i> Video </a> -->
+                </div>
+
+            </div>
         <div style="width: 600px; margin-left: auto; margin-right: auto;">
             <img src="assets/teaser.jpg">
         </div>
-        <div class="container-2 nerf_header_v2 w-container">
+        <div class="container-2 nerf_header_v2 w-container" style="text-align: left;">
         <p>We introduce Diff3F, a novel feature distiller that harnesses the expressive power of in-painting diffusion features and distills them to points on 3D surfaces. Here, the proposed features are employed for point-to-point shape correspondence between assets varying in shape, pose, species and topology. We achieve this without any fine-tuning of the underlying diffusion models, and demonstrate results on untextured meshes, point clouds, and raw scans. Note that we show raw point-to-point correspondence, without any regularization or smoothing. Inputs are <b>point clouds, non-manifold meshes, or 2-manifold meshes</b>. The left most mesh is the source and all remaining 3D shapes are targets. Corresponding points are similarly colored.</p>
         </div>
     </div>
@@ -81,7 +107,6 @@
             </p>
         </div>
     </div>
-    <div class="warning_section_nerf w-container"><br><br><p style="font-size: 18px; color: red;"><b>Warning:</b> This website contains video results that are most compatible with Google Chrome browser.</p></div>
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Dense Correspondence</h2>
         
