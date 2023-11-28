@@ -45,6 +45,12 @@
         th {
           background-color: #f2f2f2;
         }
+        .containerside {
+            width: 45%;
+            float: left;
+            margin: 2.5%;
+        }
+    </style>
       </style>
 
 </head>
@@ -71,7 +77,7 @@
                 </div>
 
                 <div class="external-link">
-                    <a class="btn" href="" role="button" target="_blank">
+                    <a class="btn" href="https://arxiv.org/abs/2310.09965" role="button" target="_blank">
                         <i class="ai ai-arxiv"></i> Arxiv </a>
                     <a class="btn" href="" role="button" target="_blank">
                         <i class="fa fa-file-pdf"></i> Paper </a>
@@ -108,7 +114,8 @@
         </div>
     </div>
     <div class="white_section_nerf w-container">
-        <h2 class="grey-heading_nerf">Dense Correspondence</h2>
+
+        <h2 class="grey-heading_nerf">Results Gallery</h2>
         
         <p>We present correspondence results on SHREC'07 [1] to showcase correspondence on shapes other than commonly tested classes of humans and animals. 
             We show diverse shapes encompassing isometric and highly non-isometric pairs to prove the versatality of our method as a general purpose feature descriptor. 
@@ -185,6 +192,22 @@
                 <p class="myprompt nerf_text">Target</p>
                 <video class="video" loop playsinline autoplay muted src="assets/correspondence/6_target.mp4"></video>
             </div>
+        </div>
+
+        <h2 class="grey-heading_nerf">How does it work?</h2>
+        <p>We aim to decorate 3D points of a given shape in any modality- point clouds or meshes, with rich semantic descriptors. Given the scarcity of 3D geometry data from which to learn these meaningful descriptors, we leverage foundational vision models trained on very large datasets to obtain these features. This enables Diff3F to produce semantic descriptors in a zero-shot way.</p>
+        <div style="width: 900px; margin-left: auto; margin-right: auto;">
+            <img src="assets/gallery.jpg">
+        </div>
+        <div style="width: 900px; margin-left: auto; margin-right: auto;">
+            <img src="assets/pipeline.jpg">
+        </div>
+        <div class="container-2 nerf_header_v2 w-container" style="text-align: left;">
+        <p> <b>Method overview.</b> Diff3F is a feature distiller to map semantic diffusion features to 3D surface points. 
+            We render the given shape without textures from multiple views, and the resulting renderings are in-painted by guiding ControlNet with geometric conditions; 
+            the generative features from ControlNet are fused with DINO features obtained from the textured rendering, followed by unprojecting to the 3D surface. 
+            Note that the textured images obtained by conditioning ControlNet from different views can be inconsistent. Please refer to our paper for more details.</p>
+        </div>
         </div>
     </div>
 
@@ -321,9 +344,40 @@
     </div> -->
 
     <div class="white_section_nerf w-container">
+        <h2 class="grey-heading_nerf">Comparisons to prior work</h2>
+        <!-- <div class="grid-container-2">
+            <div class="grid-item" style="width: 200px;">
+                <img src="assets/compare.jpg">
+                <p class="myprompt nerf_text">We compare our DIFF3F (bottom) against SOTA methods (i.e., DPC and SE-ORNet) for the task of point-to-point shape correspondence. 
+                    Corresponding points, computed as described in Section 3.4, are similarly colored. We show results using point cloud rendering of our method for the human pair (left) and results with mesh rendering for the animal pair (right). 
+        </p>
+            </div>
+    
+            <div class="grid-item" style="width: 300px";>
+                <img src="assets/descriptor.jpg">
+                <p class="myprompt nerf_text">Source</p>
+            </div>
+        </div> -->
+
+        <div style="width: 700px; margin-left: auto; margin-right: auto;">
+            <img src="assets/visual-comparison.jpg">
+        </div>
+        <div class="containerside" style="text-align: left;">
+        <p><b>Comparisons.</b>We compare our DIFF3F (bottom) against SOTA methods (i.e., DPC and SE-ORNet) for the task of point-to-point shape correspondence. 
+            Corresponding points, computed as described in Section 3.4, are similarly colored. We show results using point cloud rendering of our method for the human pair (left) and results with mesh rendering for the animal pair (right).
+            While DPC and SE-ORNet both get confused by the different alignments of the human pair resulting in a flipped prediction, ours, being a multi-view rendering-based method, it is robust to rotation. 
+        </p>
+        </div>
+        <div class="containerside" style="text-align: right;">
+            <p><b>Regularizing point-2-point maps.</b> We compare the effectiveness of vanilla functional maps with the Wave Kernel Signature as descriptors (top) vs our descriptors Diff3F (bottom). Ours being semantic enables Functional Maps to work with non-isometric deformations even though FMs typically struggle with such cases when using traditional geometric descriptors. 
+                Our descriptors yield accurate correspondence in most cases, thus eliminating the need for further refinement algorithms typically used in related works. </p>
+        </div>
+    </div>
+    <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Evaluation comparison</h2>
         <table>
-            <caption style="text-align: left;"> We report correspondence accuracy within 1% error tolerance, with our method against competing works. The Laplace Beltrami Operator~(LBO) computation for Functional Maps[5] is unstable on TOSCA [7] since the inputs contain non-manifold meshes. By ‘*’ we denote results reported by SE-ORNet [3].</caption>
+            <caption style="text-align: left;"> We report correspondence accuracy within 1% error tolerance, with our method against competing works. The Laplace Beltrami Operator~(LBO) computation for Functional Maps[5] is unstable on TOSCA [7] since the inputs contain non-manifold meshes. 
+                By ‘*’ we denote results reported by SE-ORNet [3].</caption>
             <tr>
               <th rowspan="2"><strong>Method &rarr;</strong>
                 <br><strong>Dataset &darr; </strong></th>
@@ -393,11 +447,12 @@
             </table>
         
     </div>
-    <br>
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Generalization</h2>
         <table>
-            <caption style="text-align: left;"> We compare generalization capabilities of Diff3F vs others, by training on one dataset and testing on a different set. For DPC and SE-ORNet, we choose SURREAL and SMAL as the training sets for human and animal shapes respectively as these datasets are significantly larger and lead to improved generalization scores. By '*' we denote results reported by SE-ORNet[3].</caption>
+            <caption style="text-align: left;"> We compare generalization capabilities of Diff3F vs others, by training on one dataset and testing on a different set. 
+                For DPC and SE-ORNet, we choose SURREAL and SMAL as the training sets for human and animal shapes respectively as these datasets are significantly larger and lead to improved generalization scores. 
+                By '*' we denote results reported by SE-ORNet[3]. Ours sees significantly higher scores for generalization.</caption>
             <tr>
               <th rowspan="2"><strong>Train</strong></th>
               <th rowspan="2"><strong>Method</strong></th>
@@ -469,9 +524,8 @@
 
     
 
-<div class="white_section_nerf grey_container w-container">
+<div class="white_section_nerf w-container">
 <h2 class="grey-heading_nerf">References</h2>
-<div class="bibtex">
     <br>
     [1] Daniela Giorgi, Silvia Biasotti, and Laura Paraboschi. Shape077
     retrieval contest 2007: Watertight models track. SHREC com-078
@@ -496,7 +550,20 @@
 
   </code></pre> -->
 </div>
-</div>
+
+<div class="white_section_nerf grey_container w-container">
+    <h2 class="grey-heading_nerf">BibTeX</h2>
+    <div class="bibtex">
+        <pre><code>
+            @article{wang2023proteusnerf,
+                title={ProteusNeRF: Fast Lightweight NeRF Editing using 3D-Aware Image Context},
+                author={Wang, Binglun and Dutt, Niladri Shekhar and Mitra, Niloy J.},
+                journal={arXiv preprint arXiv:2310.09965},
+                year={2023}
+              }
+      </code></pre>
+    </div>
+    </div>
 
 </body>
 <footer>
