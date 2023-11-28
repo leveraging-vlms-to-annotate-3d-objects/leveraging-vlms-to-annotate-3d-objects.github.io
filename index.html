@@ -24,7 +24,7 @@
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document);
     </script>
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
     <script type="text/javascript" src="static/js/zoom.js"></script>
     <script type="text/javascript" src="static/js/video_comparison.js"></script>
     <style>
@@ -88,8 +88,8 @@
     }
 
     .wtable {
-        width: 80%; /* Set the width to 80% of the parent container */
-        max-width: 900px; /* Set a maximum width to prevent excessive scaling */
+        width: 90%; /* Set the width to 80% of the parent container */
+        max-width: 1000px; /* Set a maximum width to prevent excessive scaling */
         margin-left: auto;
         margin-right: auto;
     }
@@ -105,12 +105,13 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .wtable th, .wtable td {
         border: 1px solid #ddd;
         padding: 8px;
-        text-align: left;
     }
 
     .wtable th {
@@ -259,7 +260,7 @@
             </div>
         </div>
 
-        <h2 class="grey-heading_nerf">How does it work?</h2>
+        <h2 class="grey-heading_nerf">How Does It Work?</h2>
         <p>We aim to decorate 3D points of a given shape in any modality- point clouds or meshes, with rich semantic descriptors. Given the scarcity of 3D geometry data from which to learn these meaningful descriptors, we leverage foundational vision models trained on very large datasets to obtain these features. This enables Diff3F to produce semantic descriptors in a zero-shot way.</p>
         <div class="image-container3">
             <img src="assets/gallery.jpg">
@@ -271,14 +272,14 @@
         <p> <b>Method overview.</b> Diff3F is a feature distiller to map semantic diffusion features to 3D surface points. 
             We render the given shape without textures from multiple views, and the resulting renderings are in-painted by guiding ControlNet with geometric conditions; 
             the generative features from ControlNet are fused with DINO features obtained from the textured rendering, followed by unprojecting to the 3D surface. 
-            Note that the textured images obtained by conditioning ControlNet from different views can be inconsistent. Please refer to our paper for more details.</p>
+            Note that the textured images obtained by conditioning ControlNet from different views can be inconsistent but when aggregated it produces stable sematic descriptors. Please refer to our paper for more details.</p>
         </div>
         </div>
     </div>
 
 
     <div class="white_section_nerf w-container">
-        <h2 class="grey-heading_nerf">Semantic understanding</h2>
+        <h2 class="grey-heading_nerf">Semantic Understanding</h2>
         <p>We present heatmaps for visualization of our semantic descriptors. For a query point in the source (denoted by a red ball), we see sematically related points being highlighted in the target. The highest similarity point in the target is indicated by a red ball.</p>
         <div class="image-container1">
             <img src="assets/hmap.png">
@@ -409,7 +410,7 @@
     </div> -->
 
     <div class="white_section_nerf w-container">
-        <h2 class="grey-heading_nerf">Comparisons to prior work</h2>
+        <h2 class="grey-heading_nerf">Comparison to Prior Works</h2>
         <br>
         <!-- <div class="grid-container-2">
             <div class="grid-item" style="width: 200px;">
@@ -431,7 +432,7 @@
         <div class="containerside" style="text-align: left;">
         <p><b>Comparisons.</b> We compare our Diff3F (bottom) against SOTA methods (i.e., DPC and SE-ORNet) for the task of point-to-point shape correspondence. 
             Corresponding points are similarly colored. We show results using point cloud rendering of our method for the human pair (left) and results with mesh rendering for the animal pair (right).
-            While DPC and SE-ORNet both get confused by the different alignments of the human pair resulting in a flipped prediction, ours, being a multi-view rendering-based method, it is robust to rotation. 
+            While DPC and SE-ORNet both get confused by the different alignments of the human pair resulting in a laterally flipped prediction, ours, being a multi-view rendering-based method, it is robust to rotation. 
         </p>
         </div>
         <div class="containerside" style="text-align: right;">
@@ -440,7 +441,7 @@
         </div>
     </div>
     <div class="wtable w-container">
-        <h2 class="grey-heading_nerf">Evaluation comparison</h2>
+        <h2 class="grey-heading_nerf">Evaluation Comparison</h2>
         <table>
             <caption style="text-align: left;"> We report correspondence accuracy within 1% error tolerance, with our method against competing works. The Laplace Beltrami Operator~(LBO) computation for Functional Maps[5] is unstable on TOSCA [7] since the inputs contain non-manifold meshes. 
                 By ‘*’ we denote results reported by SE-ORNet [3].</caption>
