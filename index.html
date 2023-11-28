@@ -345,6 +345,7 @@
 
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Comparisons to prior work</h2>
+        <br>
         <!-- <div class="grid-container-2">
             <div class="grid-item" style="width: 200px;">
                 <img src="assets/compare.jpg">
@@ -363,13 +364,13 @@
             <img src="assets/visual-comparison.jpg">
         </div>
         <div class="containerside" style="text-align: left;">
-        <p><b>Comparisons.</b>We compare our DIFF3F (bottom) against SOTA methods (i.e., DPC and SE-ORNet) for the task of point-to-point shape correspondence. 
-            Corresponding points, computed as described in Section 3.4, are similarly colored. We show results using point cloud rendering of our method for the human pair (left) and results with mesh rendering for the animal pair (right).
+        <p><b>Comparisons.</b>We compare our Diff3F (bottom) against SOTA methods (i.e., DPC and SE-ORNet) for the task of point-to-point shape correspondence. 
+            Corresponding points are similarly colored. We show results using point cloud rendering of our method for the human pair (left) and results with mesh rendering for the animal pair (right).
             While DPC and SE-ORNet both get confused by the different alignments of the human pair resulting in a flipped prediction, ours, being a multi-view rendering-based method, it is robust to rotation. 
         </p>
         </div>
         <div class="containerside" style="text-align: right;">
-            <p><b>Regularizing point-2-point maps.</b> We compare the effectiveness of vanilla functional maps with the Wave Kernel Signature as descriptors (top) vs our descriptors Diff3F (bottom). Ours being semantic enables Functional Maps to work with non-isometric deformations even though FMs typically struggle with such cases when using traditional geometric descriptors. 
+            <p><b>Regularizing point-2-point maps.</b> We compare the effectiveness of vanilla functional maps [5] with the Wave Kernel Signature as descriptors [6] (top) vs our descriptors Diff3F (bottom). Ours being semantic enables Functional Maps to work with non-isometric deformations even though FMs typically struggle with such cases when using traditional geometric descriptors. 
                 Our descriptors yield accurate correspondence in most cases, thus eliminating the need for further refinement algorithms typically used in related works. </p>
         </div>
     </div>
@@ -452,13 +453,13 @@
         <table>
             <caption style="text-align: left;"> We compare generalization capabilities of Diff3F vs others, by training on one dataset and testing on a different set. 
                 For DPC and SE-ORNet, we choose SURREAL and SMAL as the training sets for human and animal shapes respectively as these datasets are significantly larger and lead to improved generalization scores. 
-                By '*' we denote results reported by SE-ORNet[3]. Ours sees significantly higher scores for generalization.</caption>
+                By '*' we denote results reported by SE-ORNet [3]. Ours sees significantly higher scores for generalization.</caption>
             <tr>
               <th rowspan="2"><strong>Train</strong></th>
               <th rowspan="2"><strong>Method</strong></th>
-              <th colspan="2">TOSCA</th>
-              <th colspan="2">SHREC'19</th>
-              <th colspan="2">SHREC'20</th>
+              <th colspan="2">TOSCA [7]</th>
+              <th colspan="2">SHREC'19 [8]</th>
+              <th colspan="2">SHREC'20 [9]</th>
             </tr>
             <tr>
               <th>acc &uarr;</th>
@@ -555,12 +556,7 @@
     <h2 class="grey-heading_nerf">BibTeX</h2>
     <div class="bibtex">
         <pre><code>
-            @article{wang2023proteusnerf,
-                title={ProteusNeRF: Fast Lightweight NeRF Editing using 3D-Aware Image Context},
-                author={Wang, Binglun and Dutt, Niladri Shekhar and Mitra, Niloy J.},
-                journal={arXiv preprint arXiv:2310.09965},
-                year={2023}
-              }
+            
       </code></pre>
     </div>
     </div>
