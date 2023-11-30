@@ -96,8 +96,8 @@
     }
 
     .wtable {
-        width: 90%; /* Set the width to 80% of the parent container */
-        max-width: 1000px; /* Set a maximum width to prevent excessive scaling */
+        width: 90%;
+        max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -105,16 +105,30 @@
     /* Media query for smaller screens */
     @media (max-width: 600px) {
         .wtable {
-            width: 100%; /* Make the container full width on smaller screens */
+            width: 100%;
+        }
+
+        /* Increase specificity for smaller screens */
+        .wtable td {
+            font-size: 7px !important; 
+            max-width: 30px !important;
+            white-space: normal;
+        }
+        .wtable th {
+            font-size: 7px !important; 
+            max-width: 30px !important;
+            white-space: normal;
         }
     }
 
+    /* Common styles for both large and small screens */
     .wtable table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 15px;
         margin-left: auto;
         margin-right: auto;
+        font-size: 10px;
     }
 
     .wtable th, .wtable td {
@@ -125,6 +139,13 @@
     .wtable th {
         background-color: #f2f2f2;
     }
+
+    @media (max-width: 600px) {
+    .white_section_nerf_ref {
+        display: none; /* Hide the section on smaller screens */
+    }
+    }   
+
     </style>
 
 </head>
@@ -169,6 +190,7 @@
         <p>We introduce Diff3F, a novel feature distiller that harnesses the expressive power of in-painting diffusion features and distills them to points on 3D surfaces. Here, the proposed features are employed for point-to-point shape correspondence between assets varying in shape, pose, species and topology. We achieve this without any fine-tuning of the underlying diffusion models, and demonstrate results on untextured meshes, point clouds, and raw scans. Note that we show raw point-to-point correspondence, without any regularization or smoothing. Inputs are <b>point clouds, non-manifold meshes, or 2-manifold meshes</b>. The left most mesh is the source and all remaining 3D shapes are targets. Corresponding points are similarly colored.</p>
         </div>
     </div>
+    <br>
 
 
     <div data-anchor="slide1" class="section nerf_section">
@@ -268,7 +290,7 @@
             </div>
         </div>
 
-        <h2 class="grey-heading_nerf">How Does It Work?</h2>
+        <h2 class="grey-heading_nerf">How Does it Work?</h2>
         <p>We aim to decorate 3D points of a given shape in any modality- point clouds or meshes, with rich semantic descriptors. Given the scarcity of 3D geometry data from which to learn these meaningful descriptors, we leverage foundational vision models trained on very large datasets to obtain these features. This enables Diff3F to produce semantic descriptors in a zero-shot way.</p>
         <div class="image-container3">
             <img src="assets/gallery.jpg">
@@ -595,27 +617,26 @@
 
     
 
-<div class="white_section_nerf w-container">
+<div class="white_section_nerf_ref w-container">
 <h2 class="grey-heading_nerf">References</h2>
     <br>
     [1] Daniela Giorgi, Silvia Biasotti, and Laura Paraboschi. Shape077
-    retrieval contest 2007: Watertight models track. SHREC com-078
-    petition, 8(7):7, 2007.<br>
-    [2] Itai Lang, Dvir Ginzburg, Shai Avidan, and Dan Raviv. Dpc: 625 Unsupervised deep point correspondence via cross and self 626 construction. In 2021 International Conference on 3D Vision 627 (3DV), pages 1442–1451. IEEE, 2021. 
+    retrieval contest 2007: Watertight models track. SHREC competition, 8(7):7, 2007.<br>
+    [2] Itai Lang, Dvir Ginzburg, Shai Avidan, and Dan Raviv. Dpc: Unsupervised deep point correspondence via cross and self construction. In 2021 International Conference on 3D Vision (3DV), pages 1442–1451. IEEE, 2021. 
     <br>
     [3] Jiacheng Deng, Chuxin Wang, Jiahao Lu, Jianfeng He, Tianzhu Zhang, Jiyang Yu, and Zhe Zhang. Se-ornet: Self- ensembling orientation-aware network for unsupervised point cloud shape correspondence. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5364–5373, 2023.
     <br>
-    [4] Thibault Groueix, Matthew Fisher, Vladimir G Kim, Bryan C 588 Russell, and Mathieu Aubry. 3d-coded: 3d correspondences 589 by deep deformation. In Proceedings of the european confer- 590 ence on computer vision (ECCV), pages 230–246, 2018.
+    [4] Thibault Groueix, Matthew Fisher, Vladimir G Kim, Bryan C Russell, and Mathieu Aubry. 3d-coded: 3d correspondences by deep deformation. In Proceedings of the european conference on computer vision (ECCV), pages 230–246, 2018.
     <br>
     [5] Maks Ovsjanikov, Mirela Ben-Chen, Justin Solomon, Adrian Butscher, and Leonidas Guibas. Functional maps: a flexible representation of maps between shapes. ACM Transactions on Graphics (ToG), 31(4):1–11, 2012.
     <br>
     [6] Mathieu Aubry, Ulrich Schlickewei, and Daniel Cremers. The wave kernel signature: A quantum mechanical approach to shape analysis. In 2011 IEEE international conference on computer vision workshops (ICCV workshops), pages 1626– 1633. IEEE, 2011. 
     <br>
-    [7] Alexander M Bronstein, Michael M Bronstein, and Ron Kim- mel. Numerical geometry of non-rigid shapes. Springer Science & Business Media, 2008.
+    [7] Alexander M Bronstein, Michael M Bronstein, and Ron Kimmel. Numerical geometry of non-rigid shapes. Springer Science & Business Media, 2008.
     <br>
-    [8] Simone Melzi, Riccardo Marin, Emanuele Rodola`, Umberto Castellani, Jing Ren, Adrien Poulenard, Peter Wonka, and Maks Ovsjanikov. Shrec 2019: Matching humans with dif- ferent connectivity. In Eurographics Workshop on 3D Object Retrieval, page 3. The Eurographics Association, 2019.
+    [8] Simone Melzi, Riccardo Marin, Emanuele Rodola`, Umberto Castellani, Jing Ren, Adrien Poulenard, Peter Wonka, and Maks Ovsjanikov. Shrec 2019: Matching humans with different connectivity. In Eurographics Workshop on 3D Object Retrieval, page 3. The Eurographics Association, 2019.
     <br> 
-    [9] Roberto M Dyke, Yu-Kun Lai, Paul L Rosin, Stefano Zap- pala`, Seana Dykes, Daoliang Guo, Kun Li, Riccardo Marin, Simone Melzi, and Jingyu Yang. Shrec’20: Shape corre- 581 spondence with non-isometric deformations. Computers & 582 Graphics, 92:28–43, 2020.
+    [9] Roberto M Dyke, Yu-Kun Lai, Paul L Rosin, Stefano Zappala`, Seana Dykes, Daoliang Guo, Kun Li, Riccardo Marin, Simone Melzi, and Jingyu Yang. Shrec’20: Shape correspondence with non-isometric deformations. Computers & Graphics, 92:28–43, 2020.
     <br><br><br>
     <!-- <pre><code>
 
