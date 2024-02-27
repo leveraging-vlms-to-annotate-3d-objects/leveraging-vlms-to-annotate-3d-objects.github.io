@@ -155,6 +155,7 @@
         <div class="container-2 nerf_header_v2 w-container">
             <h1 class="nerf_title_v2">Diffusion 3D Features (Diff3F)</h1>
             <div class="nerf_subheader_v2">Decorating Untextured Shapes with Distilled Semantic Features</div>
+            <div class="nerf_subheader_v2" style="color: #ff7411;"><b>CVPR 2024</b></div>
         </div>
             <div class="nerf_subheader_v2">
                 <div>
@@ -173,7 +174,7 @@
                 <div class="external-link">
                     <a class="btn" href="https://arxiv.org/abs/2311.17024" role="button" target="_blank">
                         <i class="ai ai-arxiv"></i> Arxiv </a>
-                    <a class="btn" href="assets/2311.17024.pdf" role="button" target="_blank">
+                    <a class="btn" href="https://arxiv.org/pdf/2311.17024.pdf" role="button" target="_blank">
                         <i class="fa fa-file-pdf"></i> Paper </a>
                     <a class="btn" href="https://github.com/niladridutt/Diffusion-3D-Features" role="button" target="_blank">
                         <i class="fa-brands fa-github"></i> Code </a>
@@ -186,7 +187,7 @@
             <img src="assets/teaser.jpg">
         </div>
         <div class="container-2 nerf_header_v2 w-container" style="text-align: left;">
-        <p>We introduce Diff3F, a novel feature distiller that harnesses the expressive power of in-painting diffusion features and distills them to points on 3D surfaces. Here, the proposed features are employed for point-to-point shape correspondence between assets varying in shape, pose, species and topology. We achieve this without any fine-tuning of the underlying diffusion models, and demonstrate results on untextured meshes, point clouds, and raw scans. Note that we show raw point-to-point correspondence, without any regularization or smoothing. Inputs are <b>point clouds, non-manifold meshes, or 2-manifold meshes</b>. The left most mesh is the source and all remaining 3D shapes are targets. Corresponding points are similarly colored.</p>
+        <p>Diff3F is a a novel feature distiller that harnesses the expressive power of in-painting diffusion features and distills them to points on 3D surfaces. Here, the proposed features are employed for point-to-point shape correspondence between assets varying in shape, pose, species and topology. We achieve this without any fine-tuning of the underlying diffusion models, and demonstrate results on untextured meshes, point clouds, and raw scans. Note that we show raw point-to-point correspondence, without any regularization or smoothing. Inputs are <b>point clouds, non-manifold meshes, or 2-manifold meshes</b>. The left most mesh is the source and all remaining 3D shapes are targets. Corresponding points are similarly colored.</p>
         </div>
     </div>
     <br>
@@ -298,8 +299,8 @@
             <img src="assets/pipeline.jpg">
         </div>
         <div class="container-2 nerf_header_v2 w-container" style="text-align: left;">
-        <p> <b>Method overview.</b> Diff3F is a feature distiller to map semantic diffusion features to 3D surface points. 
-            We render the given shape without textures from multiple views, and the resulting renderings are in-painted by guiding ControlNet with geometric conditions; 
+        <p> <b>Method overview.</b>
+            We render a given shape without textures from multiple views, and the resulting renderings are in-painted by guiding ControlNet with geometric conditions; 
             the generative features from ControlNet are fused with DINO features obtained from the textured rendering, followed by unprojecting to the 3D surface. 
             Note that the textured images obtained by conditioning ControlNet from different views can be inconsistent but when aggregated it produces stable sematic descriptors. Please refer to our paper for more details.</p>
         </div>
@@ -309,7 +310,7 @@
 
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Semantic Understanding</h2>
-        <p>We present heatmaps for visualization of our semantic descriptors. For a query point in the source (denoted by a red ball), we see sematically related points being highlighted in the target. The highest similarity point in the target is indicated by a red ball.</p>
+        <p>We showcase heatmaps for visualization of our semantic descriptors. For a query point in the source (denoted by a red ball), we see sematically related points being highlighted in the target. The highest similarity point in the target is indicated by a red ball.</p>
         <div class="image-container1">
             <img src="assets/hmap.png">
         </div>
@@ -433,6 +434,48 @@
     </tr>
   </table>
     </div> -->
+
+    <div class="white_section_nerf w-container">
+        <h2 class="grey-heading_nerf">Part segmentation</h2>
+        <p> K-means clustering can be directly applied to our Diff3F features to extract part segments. Interestingly, we discover that the k-means 
+            centroids, extracted from one shape (e.g., human), can be used to segment another (e.g., cat), thanks to the semantic nature of our descriptors. This leads to
+            corresponding part segmentation (arms of the human map to front legs of the cat, head maps to head, etc.) as seen in the figure below.</p>
+        <div class="grid-container-3">
+            <!-- First Image -->
+            <div class="grid-item">
+                <p class="myprompt nerf_text">k=6</p>
+                <img src="assets/seg/human_seg_1.png">
+            </div>
+    
+            <!-- First Video -->
+            <div class="grid-item">
+                <p class="myprompt nerf_text">segmented using centroids of human</p>
+                <img src="assets/seg/cat_seg_2.png">
+            </div>
+    
+            <!-- Second Image -->
+            <div class="grid-item">
+                <p class="myprompt nerf_text">k=6</p>
+                <img src="assets/seg/elephant_seg_4.png">
+            </div>
+            <!-- Second Video -->
+            <div class="grid-item">
+                <p class="myprompt nerf_text">k=3</p>
+                <img src="assets/seg/chair_seg_3.png">
+            </div>
+    
+            <!-- Third Image -->
+            <div class="grid-item">
+                <p class="myprompt nerf_text">k=3</p>
+                <img src="assets/seg/fish_seg_5.png">
+            </div>
+    
+            <div class="grid-item">
+                <p class="myprompt nerf_text">segmented using centroids of dolphin</p>
+                <img src="assets/seg/bird_seg_6.png">
+            </div>
+        </div>
+    </div>
 
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Comparison to Prior Works</h2>
@@ -660,11 +703,11 @@
 </body>
 <footer>
     Template adapted from <a href="https://mrtornado24.github.io/DreamCraft3D/" target="_blank">DreamCraft3D</a> <br>
-    <div style="width: 60px; height: 20px; display: flex; align-items: center; justify-content: center;">
+    <!-- <div style="width: 60px; height: 20px; display: flex; align-items: center; justify-content: center;">
         <a href="https://hits.seeyoufarm.com">
             <img style="width: 100%;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdiff3f.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="hits"/>
         </a>
-    </div>
+    </div> -->
     
     <br><br><br>
 </footer> 
