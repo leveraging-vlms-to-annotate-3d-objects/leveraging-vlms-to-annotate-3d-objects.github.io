@@ -208,16 +208,16 @@ With these supervised and unsupervised evaluations, we show how a VLM-based pipe
     <div class="white_section_nerf w-container">
 
     <div class="white_section_nerf w-container">
-        <h2 class="grey-heading_nerf">Language models hallucinate when summarizing <br>descriptions of the same object</h2>
+        <h2 class="grey-heading_nerf">1. Language models hallucinate when summarizing <br>descriptions of the same object</h2>
         <p> We show that prior work which relies on GPT-4 to aggregate multi-view object descriptions is prone to contain hallucinated details.</p>
             <div class="white_section_nerf w-container">
 
-        <h2 class="grey-heading_nerf">A simple way to mitigate hallucinations</h2>
+        <h2 class="grey-heading_nerf">2. A simple way to mitigate hallucinations</h2>
         <br>
         <!-- <div class="grid-container-2">
             <div class="grid-item" style="width: 200px;">
                 <img src="assets/compare.jpg">
-                <p class="myprompt nerf_text">We rely on visually grounded VLM scores to aggregate multi-view object descriptions.       </p>
+                <p class="myprompt nerf_text">We propose an algorithm, ScoreAgg, which relies on visually grounded VLM scores to produce reliable summaries. A key innovation is that we don't need to score all possible descriptions against all available images (e.g., views of a given object).</p>
             </div>
     
             <div class="grid-item" style="width: 300px";>
@@ -226,20 +226,6 @@ With these supervised and unsupervised evaluations, we show how a VLM-based pipe
             </div>
         </div> -->
 
-        <div class="image-container2">
-            <img src="assets/visual-comparison.jpg">
-        </div>
-        <div class="containerside" style="text-align: left;">
-        <p><b>Comparisons.</b> We compare our Diff3F (bottom) against SOTA methods (i.e., DPC and SE-ORNet) for the task of point-to-point shape correspondence. 
-            Corresponding points are similarly colored. We show results using point cloud rendering of our method for the human pair (left) and results with mesh rendering for the animal pair (right).
-            While DPC and SE-ORNet both get confused by the different alignments of the human pair resulting in a laterally flipped prediction, ours, being a multi-view rendering-based method, it is robust to rotation. 
-        </p>
-        </div>
-        <div class="containerside" style="text-align: right;">
-            <p><b>Regularizing point-2-point maps.</b> We compare the effectiveness of vanilla functional maps [5] with the Wave Kernel Signature as descriptors [6] (top) vs our descriptors Diff3F (bottom). Ours being semantic enables Functional Maps to work with non-isometric deformations even though FMs typically struggle with such cases when using traditional geometric descriptors. 
-                Our descriptors yield accurate correspondence in most cases, thus eliminating the need for further refinement algorithms typically used in related works. </p>
-        </div>
-    </div>
     <div class="wtable w-container">
         <h2 class="grey-heading_nerf">Quantitative Comparison</h2>
 	<p>See Figure 3 in the paper for a quantitative comparison.
