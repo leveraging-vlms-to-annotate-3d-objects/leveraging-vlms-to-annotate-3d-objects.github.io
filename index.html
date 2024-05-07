@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
-    <title>Diffusion 3D Features (Diff3F)</title>
+    <title>Leveraging VLM-Based Pipelines to Annotate 3D Objects</title>
     <meta content="Diffusion 3D Features (Diff3F): Decorating Untextured Shapes with Distilled Semantic Features [CVPR 2024]" name="description" />
     <meta content="summary" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -161,16 +161,18 @@
         </div>
             <div class="nerf_subheader_v2">
                 <div>
-                    <a href="https://niladridutt.com/" target="_blank" class="nerf_authors_v2">Niladri Shekhar Dutt<span
+                    <a href="https://rkabra.com/" target="_blank" class="nerf_authors_v2">Rishabh Kabra<span
+                            class="text-span_nerf"></span></a><sup> 1, 2</sup>,&nbsp;&nbsp;
+                    <a href="https://https://matthey.me/" target="_blank" class="nerf_authors_v2">Loic Matthey<span
                             class="text-span_nerf"></span></a><sup> 1</sup>,&nbsp;&nbsp;
-                    <a href="https://sanjeevmk.github.io/" target="_blank" class="nerf_authors_v2">Sanjeev Muralikrishnan<span
+                    <a href="https://scholar.google.com/citations?user=wBxAt8cAAAAJ" target="_blank" class="nerf_authors_v2">Alexander Lerchner<span
                             class="text-span_nerf"></span></a><sup> 1</sup>,&nbsp;&nbsp;
                     <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank" class="nerf_authors_v2">Niloy J. Mitra<span
-                            class="text-span_nerf"></span></a><sup> 1, 2</sup>
+                            class="text-span_nerf"></span></a><sup> 2</sup>
                 </div>
                 <div>
-                    <h1 class="nerf_affiliation_v2"><sup>1</sup> University College London</h1>,
-                    <h1 class="nerf_affiliation_v2"><sup>2</sup> Adobe Research</h1>
+                    <h1 class="nerf_affiliation_v2"><sup>1</sup> Google DeepMind</h1>,
+                    <h1 class="nerf_affiliation_v2"><sup>2</sup> University College London</h1>
                 </div>
 
                 <div class="external-link">
@@ -198,6 +200,7 @@
     <div data-anchor="slide1" class="section nerf_section">
         <div class="w-container grey_container">
             <h2 class="grey-heading_nerf">Abstract</h2>
+ url = {https://openreview.net/forum?id=5Pcl5qOOfL&noteId=hqA5vzICE9},
             <p class="paragraph-3 nerf_text nerf_results_text">
                 We present Diff3F as a simple, robust, and class-agnostic feature descriptor that can be computed for untextured input shapes (meshes or point clouds). 
                 Our method distills diffusion features from image foundational models onto input shapes. Specifically, we use the input shapes to produce depth and normal maps 
