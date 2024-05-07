@@ -194,7 +194,7 @@
         <div class="w-container grey_container">
             <h2 class="grey-heading_nerf">Abstract</h2>
             <p class="paragraph-3 nerf_text nerf_results_text">
-		Pretrained vision language models (VLMs) present an opportunity to caption unlabeled 3D objects at scale. The leading approach to summarize VLM descriptions from different views of an object (Luo et al., 2024) relies on a language model (GPT4) to produce the final output. 
+		Pretrained vision language models (VLMs) present an opportunity to caption unlabeled 3D objects at scale. The leading approach to summarize VLM descriptions from different views of an object (Luo et al., 2023) relies on a language model (GPT4) to produce the final output. 
 This text-based aggregation is susceptible to hallucinations as it merges potentially contradictory descriptions.
 We propose an alternative algorithm to marginalize over factors such as the viewpoint which affect the VLM's response. Instead of merging text responses, we utilize the VLM's joint image-text likelihoods.
 We show our probabilistic aggregation is not only more reliable and efficient, but sets the SoTA on inferring object types with respect to human-verified labels.
@@ -394,24 +394,8 @@ With these supervised and unsupervised evaluations, we show how a VLM-based pipe
 <div class="white_section_nerf_ref w-container">
 <h2 class="grey-heading_nerf">References</h2>
     <br>
-    [1] Daniela Giorgi, Silvia Biasotti, and Laura Paraboschi. Shape077
-    retrieval contest 2007: Watertight models track. SHREC competition, 8(7):7, 2007.<br>
-    [2] Itai Lang, Dvir Ginzburg, Shai Avidan, and Dan Raviv. Dpc: Unsupervised deep point correspondence via cross and self construction. In 2021 International Conference on 3D Vision (3DV), pages 1442–1451. IEEE, 2021. 
-    <br>
-    [3] Jiacheng Deng, Chuxin Wang, Jiahao Lu, Jianfeng He, Tianzhu Zhang, Jiyang Yu, and Zhe Zhang. Se-ornet: Self- ensembling orientation-aware network for unsupervised point cloud shape correspondence. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 5364–5373, 2023.
-    <br>
-    [4] Thibault Groueix, Matthew Fisher, Vladimir G Kim, Bryan C Russell, and Mathieu Aubry. 3d-coded: 3d correspondences by deep deformation. In Proceedings of the european conference on computer vision (ECCV), pages 230–246, 2018.
-    <br>
-    [5] Maks Ovsjanikov, Mirela Ben-Chen, Justin Solomon, Adrian Butscher, and Leonidas Guibas. Functional maps: a flexible representation of maps between shapes. ACM Transactions on Graphics (ToG), 31(4):1–11, 2012.
-    <br>
-    [6] Mathieu Aubry, Ulrich Schlickewei, and Daniel Cremers. The wave kernel signature: A quantum mechanical approach to shape analysis. In 2011 IEEE international conference on computer vision workshops (ICCV workshops), pages 1626– 1633. IEEE, 2011. 
-    <br>
-    [7] Alexander M Bronstein, Michael M Bronstein, and Ron Kimmel. Numerical geometry of non-rigid shapes. Springer Science & Business Media, 2008.
-    <br>
-    [8] Simone Melzi, Riccardo Marin, Emanuele Rodola`, Umberto Castellani, Jing Ren, Adrien Poulenard, Peter Wonka, and Maks Ovsjanikov. Shrec 2019: Matching humans with different connectivity. In Eurographics Workshop on 3D Object Retrieval, page 3. The Eurographics Association, 2019.
-    <br> 
-    [9] Roberto M Dyke, Yu-Kun Lai, Paul L Rosin, Stefano Zappala`, Seana Dykes, Daoliang Guo, Kun Li, Riccardo Marin, Simone Melzi, and Jingyu Yang. Shrec’20: Shape correspondence with non-isometric deformations. Computers & Graphics, 92:28–43, 2020.
-    <br><br><br>
+    [1] Luo, Tiange, et al. "Scalable 3d captioning with pretrained models." Advances in Neural Information Processing Systems 36 (2024).<br>
+   <br><br><br>
     <!-- <pre><code>
 
   </code></pre> -->
