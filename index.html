@@ -241,149 +241,8 @@ With these supervised and unsupervised evaluations, we show how a VLM-based pipe
         </div>
     </div>
     <div class="wtable w-container">
-        <h2 class="grey-heading_nerf">Evaluation Comparison</h2>
-        <table>
-            <caption style="text-align: left;"> We report correspondence accuracy within 1% error tolerance, with our method against competing works. The Laplace Beltrami Operator~(LBO) computation for Functional Maps[5] is unstable on TOSCA [7] since the inputs contain non-manifold meshes. 
-                By ‘*’ we denote results reported by SE-ORNet [3].</caption>
-            <tr>
-              <th rowspan="2"><strong>Method &rarr;</strong>
-                <br><strong>Dataset &darr; </strong></th>
-              <th colspan="2">DPC [2]</th>
-              <th colspan="2">SE-ORNet [3]</th>
-              <th colspan="2">3DCODED [4]</th>
-              <th colspan="2">FM [5]+WKS [6]</th>
-              <th colspan="2">Diff3F (ours)</th>
-              <th colspan="2">Diff3F (ours)+FM[5]</th>
-            </tr>
-            <tr>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-            </tr>
-            <tr>
-              <td>TOSCA [7]</td>
-              <td><u><i>30.79</i></u></td>
-              <td><strong>3.74</strong></td>
-              <td><strong>33.25</strong></td>
-              <td><u><i>4.32</i></u></td>
-              <td>0.5*</td>
-              <td>19.2*</td>
-              <td colspan="2">✘</td>
-              <td>20.27</td>
-              <td>5.69</td>
-              <td colspan="2">✘</td>
-            </tr>
-            <tr>
-              <td>SHREC'19 [8]</td>
-              <td>17.40</td>
-              <td>6.26</td>
-              <td>21.41</td>
-              <td>4.56</td>
-              <td>2.10</td>
-              <td>8.10</td>
-              <td>4.37</td>
-              <td>3.26</td>
-              <td><strong>26.41</strong></td>
-              <td><u><i>1.69</i></u></td>
-              <td><u><i>21.55</i></u></td>
-              <td><strong>1.49</strong></td>
-            </tr>
-            <tr>
-              <td>SHREC'20 [9]</td>
-              <td>31.08</td>
-              <td>2.13</td>
-              <td>31.70</td>
-              <td>1.00</td>
-              <td colspan="2">✘</td>
-              <td>4.13</td>
-              <td>7.29</td>
-              <td><strong>72.60</strong></td>
-              <td><u><i>0.93</i></u></td>
-              <td><u><i>62.34</i></u></td>
-              <td><strong>0.71</strong></td>
-            </tr>
-            </table>
-        
-    </div>
-    <div class="wtable w-container">
-        <h2 class="grey-heading_nerf">Generalization</h2>
-        <table>
-            <caption style="text-align: left;"> We compare generalization capabilities of Diff3F vs others, by training on one dataset and testing on a different set. 
-                For DPC and SE-ORNet, we choose SURREAL and SMAL as the training sets for human and animal shapes respectively as these datasets are significantly larger and lead to improved generalization scores. 
-                By '*' we denote results reported by SE-ORNet [3]. Ours sees significantly higher scores for generalization.</caption>
-            <tr>
-              <th rowspan="2"><strong>Train</strong></th>
-              <th rowspan="2"><strong>Method</strong></th>
-              <th colspan="2">TOSCA [7]</th>
-              <th colspan="2">SHREC'19 [8]</th>
-              <th colspan="2">SHREC'20 [9]</th>
-            </tr>
-            <tr>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-              <th>acc &uarr;</th>
-              <th>err &darr;</th>
-            </tr>
-            <tr>
-              <td rowspan="2">SURREAL</td>
-              <td>DPC [2]</td>
-              <td>29.30</td>
-              <td><u><i>5.25</i></u></td>
-              <td>17.40</td>
-              <td>6.26</td>
-              <td>31.08</td>
-              <td>2.13</td>
-            </tr>
-            <tr>
-              <td>SE-ORNET [3]</td>
-              <td>16.71</td>
-              <td>9.19</td>
-              <td><u><i>21.41</i></u></td>
-              <td><u><i>4.56</i></u></td>
-              <td><u><i>31.70</i></u></td>
-              <td><u><i>1.00</i></u></td>
-            </tr>
-            <tr>
-              <td rowspan="2">SMAL</td>
-              <td>DPC [2]</td>
-              <td><u><i>30.28</i></u></td>
-              <td>6.43</td>
-              <td>12.34</td>
-              <td>8.01</td>
-              <td>24.5*</td>
-              <td>7.5*</td>
-            </tr>
-            <tr>
-              <td>SE-ORNET [3]</td>
-              <td><strong>31.59</strong></td>
-              <td><strong>4.76</strong></td>
-              <td>12.49</td>
-              <td>9.87</td>
-              <td>25.4*</td>
-              <td>2.9*</td>
-            </tr>
-            <tr>
-              <td>Pretrained</td>
-              <td>Diff3F</td>
-              <td>20.27</td>
-              <td>5.69</td>
-              <td><strong>26.41</strong></td>
-              <td><strong>1.69</strong></td>
-              <td><strong>72.60</strong></td>
-              <td><strong>0.93</strong></td>
-            </tr>
-          </table>
+        <h2 class="grey-heading_nerf">Quantitative Comparison</h2>
+	<p>See Figure 3 in the paper for a quantitative comparison.
     </div>
 
     <br><br>
@@ -394,7 +253,7 @@ With these supervised and unsupervised evaluations, we show how a VLM-based pipe
 <div class="white_section_nerf_ref w-container">
 <h2 class="grey-heading_nerf">References</h2>
     <br>
-    [1] Luo, Tiange, et al. "Scalable 3d captioning with pretrained models." Advances in Neural Information Processing Systems 36 (2024).<br>
+    [1] Luo, Tiange, et al. "Scalable 3d captioning with pretrained models." Advances in Neural Information Processing Systems 36 (2023).<br>
    <br><br><br>
     <!-- <pre><code>
 
