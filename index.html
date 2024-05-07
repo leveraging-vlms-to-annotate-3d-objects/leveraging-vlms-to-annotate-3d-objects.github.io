@@ -200,17 +200,15 @@
     <div data-anchor="slide1" class="section nerf_section">
         <div class="w-container grey_container">
             <h2 class="grey-heading_nerf">Abstract</h2>
- url = {https://openreview.net/forum?id=5Pcl5qOOfL&noteId=hqA5vzICE9},
             <p class="paragraph-3 nerf_text nerf_results_text">
-                We present Diff3F as a simple, robust, and class-agnostic feature descriptor that can be computed for untextured input shapes (meshes or point clouds). 
-                Our method distills diffusion features from image foundational models onto input shapes. Specifically, we use the input shapes to produce depth and normal maps 
-                as guidance for conditional image synthesis, and in the process produce (diffusion) features in 2D that we subsequently lift and aggregate on the original surface. 
-                Our key observation is that even if the conditional image generations obtained from multi-view rendering of the input shapes are inconsistent, 
-                the associated image features are robust and can be directly aggregated across views. 
-                This produces semantic features on the input shapes, without requiring additional data or training. 
-                We perform extensive experiments on multiple benchmarks (SHREC'19, SHREC'20, and TOSCA) and demonstrate that our features, being semantic instead of geometric, produce reliable correspondence across both isometeric and non-isometrically related shape families.
-                <br>
-                <!-- <img  src="assets/images/overview.png"> -->
+		Pretrained vision language models (VLMs) present an opportunity to caption unlabeled 3D objects at scale. The leading approach to summarize VLM descriptions from different views of an object (Luo et al., 2024) relies on a language model (GPT4) to produce the final output. 
+This text-based aggregation is susceptible to hallucinations as it merges potentially contradictory descriptions.
+We propose an alternative algorithm to marginalize over factors such as the viewpoint which affect the VLM's response. Instead of merging text responses, we utilize the VLM's joint image-text likelihoods.
+We show our probabilistic aggregation is not only more reliable and efficient, but sets the SoTA on inferring object types with respect to human-verified labels.
+The aggregated annotations are also useful for conditional inference; they improve downstream predictions (e.g., of object material) when the object’s type is specified as an auxiliary text-based input.
+Such auxiliary inputs allow ablating the contribution of visual reasoning over visionless reasoning in an unsupervised setting.
+With these supervised and unsupervised evaluations, we show how a VLM-based pipeline can be leveraged to produce reliable annotations for 764K objects from the Objaverse dataset.
+                            <br>
             </p>
         </div>
     </div>
