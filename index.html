@@ -210,7 +210,7 @@
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">1. Language models hallucinate</h2>
         <!-- <h2 class="grey-heading_nerf">  even when summarizing descriptions of the same object</h2> -->
-        <p class="paragraph-3 nerf_text nerf_results_text"> Prior work that relies on GPT-4 to aggregate multi-view object descriptions is prone to contain hallucinated details</p>
+        <p class="paragraph-3 nerf_text nerf_results_text"> Prior work that relies on GPT-4 to aggregate multi-view object descriptions is prone to contain hallucinated details:</p>
         <div class="grid-container-2">
             <div class="grid-item">  
                 <video height="100%" autoplay muted controls>
@@ -241,7 +241,7 @@
 
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">2. A simple way to mitigate hallucinations</h2>
-        <p class="paragraph-3 nerf_text nerf_results_text">We propose an algorithm, <em>ScoreAgg</em>, which relies on visually grounded VLM scores to produce reliable summaries. A key innovation is that we don't need to score all possible descriptions against all available images (e.g., views of a given object).</p>
+        <p class="paragraph-3 nerf_text nerf_results_text">We propose an algorithm, <em>ScoreAgg</em>, which relies on visually grounded VLM scores to produce reliable summaries. These scores can be derived for free while sampling from the VLM. ScoreAgg requires no additional modules, nor any model retraining. It is a simple way to boost the accuracy of zero-shot VLM inference.</p>
     </div>
 
     <div class="white_section_nerf w-container">
