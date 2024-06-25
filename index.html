@@ -190,7 +190,7 @@
     </div>
     <br>
 
-
+    <section id="abstract">
     <div data-anchor="slide1" class="section nerf_section">
         <div class="w-container grey_container">
             <h2 class="grey-heading_nerf">Abstract</h2>
@@ -206,7 +206,9 @@
             </p>
         </div>
     </div>
+    </section>
 
+    <section id="hallucination">
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">VLMs are inconsistent and LLMs hallucinate</h2>
         <!-- <h2 class="grey-heading_nerf">  even when summarizing descriptions of the same object</h2> -->
@@ -239,7 +241,9 @@
             </div> -->
         </div>
     </div>
+    </section>
 
+    <section id="scoreagg">
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">A simple way to mitigate hallucinations</h2>
         <p class="paragraph-3 nerf_text nerf_results_text">We propose an algorithm, <em>ScoreAgg</em>, which relies on visually grounded VLM scores to summarize VLM responses across multiple queries. These scores can be derived for free while sampling responses from any VLM. ScoreAgg requires no additional modules, model retraining, or rescoring of responses. It is a simple way to boost the accuracy of zero-shot VLM inference.</p>
@@ -247,12 +251,16 @@
             <img src="assets/scoreagg_method.png">
         </div>
     </div>
+    </section>
 
+    <section id="quantitative">
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Quantitative Comparison</h2>
         <p class="paragraph-3 nerf_text nerf_results_text">See Figure 3 in the paper for a quantitative comparison.</p>
     </div>
+    </section>
     
+    <section id="qualitative">
     <div class="white_section_nerf w-container">
         <h2 class="grey-heading_nerf">Qualitative Results</h2>
             <p class="paragraph-3 nerf_text nerf_results_text">We use 8 images per object to generate multi-view VLM captions, then summarize them using ScoreAgg (ours). We compare these aggregate captions with prior work (CAP3D), which relies on text-based summarization using GPT-4.</p>
@@ -350,8 +358,10 @@
 
       </code></pre> -->
     </div>
+    </section id="qualitative">
 
 
+    <<section id="cite">
     <div class="white_section_nerf grey_container w-container">
         <h2 class="grey-heading_nerf">BibTeX</h2>
         <div class="bibtex">
@@ -368,6 +378,7 @@
             </code></pre>
         </div>
     </div>
+    </section>
 
 </body>
 
